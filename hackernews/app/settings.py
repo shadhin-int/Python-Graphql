@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'links',
 ]
 
+# GRAPHENE = {
+#     'SCHEMA': 'hackernews.schema.schema'
+# }
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -52,10 +56,11 @@ MIDDLEWARE = [
 ]
 
 GRAPHENE ={
-    'SCHEMA':'hackernews.schema.schema'
+    'SCHEMA': 'app.schema.schema'
 }
 
-ROOT_URLCONF = 'hackernews.urls'
+
+ROOT_URLCONF = 'app.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +78,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'hackernews.wsgi.application'
+WSGI_APPLICATION = 'app.wsgi.application'
 
 
 # Database
