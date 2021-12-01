@@ -55,17 +55,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-GRAPHENE ={
+GRAPHENE = {
     'SCHEMA': 'app.schema.schema',
     'MIDDLEWARE': [
-        'graphql_jwt.middleware.JSONWebTokenMiddleware'
-    ]
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
 }
 
-AUTHENTICATION_BACKENDS = [
-    'graphql_jwt.middleware.JSONWebTokenMiddleware',
-    'django.contrib.auth.backends.ModelBackend'
-]
+AUTHENTICATION_BACKENDS = {
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+}
 
 
 ROOT_URLCONF = 'app.urls'
