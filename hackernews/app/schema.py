@@ -5,8 +5,8 @@ from links.models import Link
 import links.schema
 import user.schema
 import graphql_jwt
-# import links.schema_relay
-from links import schema_relay
+import links.schema_relay
+# from links import schema_relay
 
 
 class Query(
@@ -20,7 +20,7 @@ class Query(
 # schema = graphene.Schema(query=Query)
 
 
-class Mutation(links.schema.Mutation, user.schema.Mutation, graphene.ObjectType):
+class Mutation(links.schema.Mutation, user.schema.Mutation, links.schema_relay.RelayMutation, graphene.ObjectType):
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()
     veryfy_token = graphql_jwt.Verify.Field()
     refresh_token = graphql_jwt.Refresh.Field()
